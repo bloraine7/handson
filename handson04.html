@@ -8,5 +8,21 @@
 </head>
 <body style="background-color: rgb(3, 8, 20); color: aliceblue;">
     <h1>Handson 04</h1>
+
+    idade <input type="text" id="idade">
+    <button onclick="validaIdade()">verificar</button>
+
+    <script>
+    function validaIdade(){
+        var idade = document.getElementById("idade").value;
+        if(idade >= 18){
+            alert("Usuário de maior!")
+        } 
+        else{
+            alert("Usuário de menor!") 
+        }
+    }  
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handson 05</title>
+</head>
+<body style="background-color: rgb(3, 8, 20); color: aliceblue;">
+    <h1>Handson 05 	&#128172;</h1>
+    Digite um numero: <input id="numero" type="number"> 
+    <button onclick="teste()">Testar</button>
+ 
+    <script type="text/javascript">
+     function teste(){
+      var num = parseFloat(document.getElementById("numero").value);
+      
+      if (num > 0)
+       alert(num + " eh Positivo");
+      else 
+      if(num < 0)
+        alert(num + " eh Negativo");
+       else
+        alert("Nem positivo nem negativo, nulo");
+     }
+  </script>
+
+</body>
+</html>
