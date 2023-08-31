@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handson 18 - o DESAFIO</title>
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body style="background-color: black; color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <center><h1>ACREDITA!</h1></center>
+<canvas id="myCanvas" width="2000" height="3000"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+const imagem = new Image();
+imagem.src = "img/images.png"; 
+
+let x = 0; // Posição inicial no eixo X
+
+function animar() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Atualize a posição da imagem
+  x += 2; // Movimenta 2 pixels para a direita a cada frame
+  
+  // Verifique se a imagem saiu da tela, reinicie a posição
+  if (x > canvas.width) {
+    x = -imagem.width; // Reinicia a posição para fora da tela à esquerda
+  }
+  
+  // Desenhe a imagem no canvas na posição atualizada
+  ctx.drawImage(imagem, x, 0);
+  
+  requestAnimationFrame(animar);
+}
+
+// Carregue a imagem e inicie a animação quando estiver carregada
+imagem.onload = function() {
+  animar();
+};
+
+</script>
+</body>
+</html>
+
+
